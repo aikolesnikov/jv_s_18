@@ -31,7 +31,6 @@ public class Main {
 
     private static void printRightTop() {
         for (int i = 0; i < size; i++) {
-
             for (int j = 1; j <= size; j++) {
                 if (j > i)
                     System.out.print(' ');
@@ -68,7 +67,6 @@ public class Main {
 
     private static void printLeftTopLeftBottomByOneCycle() {
         for (int i = 0; i < size; i++) {
-
             if (i < size / 2) {
                 for (int j = size; j >= 0; j--) {
                     if (j > i)
@@ -84,11 +82,7 @@ public class Main {
                         System.out.print(' ');
                 }
             }
-
-
             System.out.println();
-
-
         }
     }
 
@@ -112,8 +106,6 @@ public class Main {
 
         System.out.println("Task 5.");
         System.out.println();
-
-
 
     }
 }
