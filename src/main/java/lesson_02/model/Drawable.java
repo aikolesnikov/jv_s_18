@@ -1,4 +1,4 @@
-package lesson_02;
+package lesson_02.model;
 
 public interface Drawable {
     void draw();
