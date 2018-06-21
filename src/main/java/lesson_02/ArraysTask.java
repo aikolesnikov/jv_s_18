@@ -4,7 +4,147 @@ import java.util.Arrays;
 
 public class ArraysTask {
 
-    private static int[] Task14( int[] ar ) {
+
+    private static void task_01(int[] ar) {
+        for (int i = 0; i < ar.length; i++) {
+            System.out.println(ar[i] + " ");
+        }
+        System.out.println();
+        for (int i = ar.length - 1; i >= 0; i--) {
+            System.out.println(ar[i] + " ");
+        }
+
+
+    }
+
+    private static int task_02(int[] ar) {
+        int s = 0;
+
+        for (int anAr : ar) {
+            s += anAr;
+        }
+
+        return s;
+    }
+
+    private static int task_03(int[] ar) {
+        int max = ar[0];
+
+        for (int i = 1; i < ar.length; i++) {
+            if (ar[i] > max) {
+                max = ar[i];
+            }
+        }
+        return max;
+    }
+
+    private static int task_04(int[] ar) {
+        int min = ar[0];
+
+        for (int i = 1; i < ar.length; i++) {
+            if (ar[i] < min) {
+                min = ar[i];
+            }
+        }
+        return min;
+    }
+
+    private static int task_05(int[] ar) {
+        int s = 0;
+
+        for (int anAr : ar) {
+            if (anAr % 2 == 0) {
+                s += anAr;
+            }
+        }
+
+        return s;
+    }
+
+    private static int task_06(int[] ar) {
+        int s = 0;
+
+        for (int anAr : ar) {
+            if ((anAr % 2 == 0) && (anAr > 19) && (anAr < 31)) {
+                s += anAr;
+            }
+        }
+
+        return s;
+    }
+
+    private static void task_07(int[] ar) {
+        int maxEven = ar[0];
+        int minOdd = ar[0];
+
+        for (int anAr : ar) {
+            if ((anAr % 2 == 0) && (anAr > maxEven)) {
+                maxEven = anAr;
+            }
+            if ((Math.abs(anAr % 2) > 0) && (anAr < minOdd)) {
+                minOdd = anAr;
+            }
+        }
+        System.out.println("maxEven=" + maxEven + ", minOdd=" + minOdd);
+
+    }
+
+    public static void task_08(int[] ar) {
+
+        for (int i = 0; i < ar.length; i++) {
+            if (ar[i] < 0) {
+                ar[i] = -ar[i];
+            }
+        }
+        System.out.println(Arrays.toString(ar));
+    }
+
+    private static void task_09(int[] ar) {
+
+        for (int i = 0; i < ar.length; i++) {
+            if (ar[i] < 0) {
+                ar[i]--;
+            }
+            if (ar[i] > 0) {
+                ar[i]++;
+            }
+        }
+        System.out.println(Arrays.toString(ar));
+    }
+
+    private static void task_10(int[] ar) {
+
+        int avg = 0;
+
+        for (int i = 0; i < ar.length; i++) {
+            avg += ar[i];
+        }
+        avg = avg / ar.length;
+
+        int k = 0;
+        for (int i = 0; i < ar.length; i++) {
+            if (ar[i] > avg) {
+                k++;
+            }
+        }
+
+        System.out.println(avg + " " + k);
+    }
+
+    private static int[] task11(int[] ar1, int[] ar2) {
+
+        int[] ar3 = new int[ar1.length];
+
+        for (int i = 0; i < ar1.length; i++) {
+            ar3[i] = ar1[i]+ar2[i];
+        }
+
+        return ar3;
+    }
+
+
+
+    private static int[] task14(int[] ar ) {
         int minPos = 0;
         int maxPos = 0;
 
@@ -39,7 +179,7 @@ public class ArraysTask {
         return ar2;
     }
 
-    private static void Task15(int[] ar) {
+    private static void task15(int[] ar) {
         int negCount = 0;
         int posCount = 0;
 
@@ -71,7 +211,7 @@ public class ArraysTask {
         System.out.println(Arrays.toString(arPos));
     }
 
-    private static int[] Task16(int[] ar1, int[] ar2) {
+    private static int[] task16(int[] ar1, int[] ar2) {
 
         int c = 0;
         for (int i = 0; i < ar1.length; i++) {
@@ -92,7 +232,7 @@ public class ArraysTask {
         return ar3;
     }
 
-    private static int[] Task17(int[] ar) {
+    private static int[] task17(int[] ar) {
         int min = ar[0];
         int max = ar[0];
 
@@ -116,7 +256,7 @@ public class ArraysTask {
         return Arrays.copyOf(tmpAr, c);
     }
 
-    private static int[] Task18(int[] ar1, int[] ar2) {
+    private static int[] task18(int[] ar1, int[] ar2) {
 
         int avg1 = 0, avg2 = 0;
 
@@ -158,11 +298,42 @@ public class ArraysTask {
     }
 
     public static void main(String[] args) {
-        // System.out.println(Arrays.toString(Task14(new int[]{1, 2, 3, 4, 5, 6})));
-        // Task15(new int[]{1, 2, 3, 4, -5, 6});
-        // System.out.println(Arrays.toString(Task16(new int[]{1, 2, 3, 4, 5, 6}, new int[]{3, 4, 5, 6, 7, 8})));
-        // System.out.println(Arrays.toString(Task17(new int[]{8, 2, 3, 7, 8})));
-        System.out.println(Arrays.toString(Task18(new int[]{1, 2, 3, 4, 5, 6}, new int[]{3, 4, 5, 6, 7, 8})));
+
+        int[] ar = new int[]{1, 3, 5, 7, 8, 10, 22, -24};
+        task_01(ar);
+
+        System.out.println(task_02(ar));
+        System.out.println();
+
+        System.out.println(task_03(ar));
+        System.out.println();
+
+        System.out.println(task_04(ar));
+        System.out.println();
+
+        System.out.println(task_05(ar));
+        System.out.println();
+
+        System.out.println(task_06(ar));
+        System.out.println();
+
+        task_07(ar);
+        System.out.println();
+
+        // task_08(ar);
+        // System.out.println();
+
+        task_09(ar);
+        System.out.println();
+
+        task_10(ar);
+
+
+        // System.out.println(Arrays.toString(task14(new int[]{1, 2, 3, 4, 5, 6})));
+        // task15(new int[]{1, 2, 3, 4, -5, 6});
+        // System.out.println(Arrays.toString(task16(new int[]{1, 2, 3, 4, 5, 6}, new int[]{3, 4, 5, 6, 7, 8})));
+        // System.out.println(Arrays.toString(task17(new int[]{8, 2, 3, 7, 8})));
+        System.out.println(Arrays.toString(task18(new int[]{1, 2, 3, 4, 5, 6}, new int[]{3, 4, 5, 6, 7, 8})));
 
     }
 
