@@ -1,6 +1,6 @@
 package lesson_02.model;
 
-abstract class Shape {
+public abstract class Shape {
 
     private String shapeColor;
 
@@ -19,7 +19,7 @@ abstract class Shape {
         shapeColor = color;
     }
 
-    abstract double calcArea();
+    public abstract double calcArea();
 
     @Override
     public abstract String toString();
