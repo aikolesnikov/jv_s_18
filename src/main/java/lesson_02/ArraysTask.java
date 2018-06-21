@@ -116,11 +116,54 @@ public class ArraysTask {
         return Arrays.copyOf(tmpAr, c);
     }
 
+    private static int[] Task18(int[] ar1, int[] ar2) {
+
+        int avg1 = 0, avg2 = 0;
+
+        for (int i : ar1) {
+            avg1 += i;
+        }
+        for (int i : ar2) {
+            avg2 += i;
+        }
+        avg1 = avg1/ar1.length;
+        avg2 = avg2/ar2.length;
+
+
+        System.out.println(avg1 + " " + avg2);
+        int b1, b2;
+        if (avg1<avg2) {
+            b1 = avg1;
+            b2 = avg2;
+        } else {
+            b1 = avg2;
+            b2 = avg1;
+        }
+
+
+        int c = 0;
+        int[] tmpAr = new int[ar1.length+ar2.length];
+        for (int i = 0; i < ar1.length; i++) {
+            if (((ar1[i] > b1) && (ar1[i] < b2))) {
+                tmpAr[c++] = ar1[i];
+            }
+        }
+        for (int i = 0; i < ar2.length; i++) {
+            if (((ar2[i] > b1) && (ar2[i] < b2))) {
+                tmpAr[c++] = ar2[i];
+            }
+        }
+
+        return Arrays.copyOf(tmpAr, c);
+    }
+
     public static void main(String[] args) {
         // System.out.println(Arrays.toString(Task14(new int[]{1, 2, 3, 4, 5, 6})));
         // Task15(new int[]{1, 2, 3, 4, -5, 6});
         // System.out.println(Arrays.toString(Task16(new int[]{1, 2, 3, 4, 5, 6}, new int[]{3, 4, 5, 6, 7, 8})));
+        // System.out.println(Arrays.toString(Task17(new int[]{8, 2, 3, 7, 8})));
+        System.out.println(Arrays.toString(Task18(new int[]{1, 2, 3, 4, 5, 6}, new int[]{3, 4, 5, 6, 7, 8})));
 
-        System.out.println(Arrays.toString(Task17(new int[]{8, 2, 3, 7, 8})));
     }
+
 }
