@@ -1,32 +1,48 @@
 package lesson_02.model;
 
 public class Triangle extends Shape {
+    private double a;
+    private double b;
+    private double c;
 
-    private double radius;
-
-    public Triangle(String color, double radius) {
-        super(color);
-        this.radius = radius;
+    public Triangle( String color, double a, double b, double c ) {
+        super( color );
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
-    public Triangle( double radius ) {
-        this.radius = radius;
+    public double getA() {
+        return a;
     }
 
-    public double getRadius() {
-        return radius;
+    public void setA( double a ) {
+        this.a = a;
     }
 
-    public void setRadius( double radius ) {
-        this.radius = radius;
+    public double getB() {
+        return b;
+    }
+
+    public void setB( double b ) {
+        this.b = b;
+    }
+
+    public double getC() {
+        return c;
+    }
+
+    public void setC( double c ) {
+        this.c = c;
     }
 
     double calcArea() {
-        return Math.PI * radius * radius;
+        double p = ( a + b + c ) / 2;
+
+        return Math.sqrt(p * ( p - a ) * ( p - b ) * ( p - c ));
     }
 
     public String toString() {
         return "Triangle of " + getShapeColor() + " color with size " + calcArea();
     }
-
 }
