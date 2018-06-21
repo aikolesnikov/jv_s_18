@@ -21,7 +21,7 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    double calcArea() {
+    public double calcArea() {
         return Math.PI * radius * radius;
     }
 

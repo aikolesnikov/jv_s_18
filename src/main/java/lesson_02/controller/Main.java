@@ -6,6 +6,8 @@ import lesson_02.model.Shape;
 import lesson_02.model.Triangle;
 import lesson_02.view.Informer;
 
+import javax.sound.sampled.Line;
+
 public class Main {
 
     public static void main( String[] args ) {
@@ -19,13 +21,13 @@ public class Main {
         Triangle t1 = new Triangle("blue", 10, 12, 15);
         // System.out.println(t1);
 
-        Shape[] oAr = new Shape[10];
-        oAr[0] = r1;
-        oAr[1] = c1;
-        oAr[2] = t1;
+        Shape[] sAr = new Shape[10];
+        sAr[0] = r1;
+        sAr[1] = c1;
+        sAr[2] = t1;
 
-        Informer.printShapes(oAr);
-
+        Informer.printShapes(sAr);
+        System.out.println(Informer.getSummarySize( sAr ));
 
     }
 }

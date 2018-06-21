@@ -31,7 +31,7 @@ public class Rectangle extends Shape {
         System.out.println( "Rectangle drawing." );
     }
 
-    double calcArea() {
+    public double calcArea() {
         return lenght * height;
     }
 

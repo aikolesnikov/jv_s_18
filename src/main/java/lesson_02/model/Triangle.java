@@ -36,7 +36,7 @@ public class Triangle extends Shape {
         this.c = c;
     }
 
-    double calcArea() {
+    public double calcArea() {
         double p = ( a + b + c ) / 2;
 
         return Math.sqrt(p * ( p - a ) * ( p - b ) * ( p - c ));
