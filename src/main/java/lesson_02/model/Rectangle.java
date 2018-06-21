@@ -21,9 +21,9 @@ public class Rectangle extends Shape {
         this.height = height;
     }
 
-    public Rectangle( double lenght, double height, String color ) {
+    public Rectangle( double length, double height, String color ) {
         super( color );
-        this.lenght = lenght;
+        this.lenght = length;
         this.height = height;
     }
 

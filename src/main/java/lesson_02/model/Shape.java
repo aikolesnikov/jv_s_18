@@ -1,6 +1,9 @@
 package lesson_02.model;
 
 abstract class Shape {
+
+    private String shapeColor;
+
     String getShapeColor() {
         return shapeColor;
     }
@@ -8,8 +11,6 @@ abstract class Shape {
     void setShapeColor( String shapeColor ) {
         this.shapeColor = shapeColor;
     }
-
-    private String shapeColor;
 
     Shape() {
     }
