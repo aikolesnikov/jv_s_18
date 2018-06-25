@@ -1,10 +1,12 @@
 package lesson_02.model;
 
-public abstract class Shape {
+import java.util.Comparator;
+
+public abstract class Shape{
 
     private String shapeColor;
 
-    String getShapeColor() {
+    public String getShapeColor() {
         return shapeColor;
     }
 
@@ -23,5 +25,6 @@ public abstract class Shape {
 
     @Override
     public abstract String toString();
+
 }
 

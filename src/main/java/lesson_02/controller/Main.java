@@ -4,9 +4,8 @@ import lesson_02.model.Circle;
 import lesson_02.model.Rectangle;
 import lesson_02.model.Shape;
 import lesson_02.model.Triangle;
-import lesson_02.view.Informer;
-
-import javax.sound.sampled.Line;
+import lesson_02.utils.Utils;
+import lesson_02.view.Publisher;
 
 public class Main {
 
@@ -26,8 +25,8 @@ public class Main {
         sAr[1] = c1;
         sAr[2] = t1;
 
-        Informer.printShapes(sAr);
-        System.out.println(Informer.getSummarySize( sAr ));
+        Publisher.printAllShapes( sAr);
+        System.out.println( Utils.getSummarySize( sAr ));
 
     }
 }
