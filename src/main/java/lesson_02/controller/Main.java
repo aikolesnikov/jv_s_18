@@ -5,7 +5,13 @@ import lesson_02.model.Rectangle;
 import lesson_02.model.Shape;
 import lesson_02.model.Triangle;
 import lesson_02.utils.Utils;
-import lesson_02.view.Publisher;
+
+import static lesson_02.utils.Utils.*;
+import static lesson_02.view.Publisher.*;
+
+import java.util.Arrays;
+
+
 
 public class Main {
 
@@ -20,8 +26,15 @@ public class Main {
         sAr[1] = c1;
         sAr[2] = t1;
 
-        Publisher.printAllShapes( sAr);
-        System.out.println( Utils.getSummarySize( sAr ));
+        // printAllShapes( sAr);
+        System.out.println( getSummarySize( sAr ));
+
+        // printAllShapes( sAr );
+        // Arrays.sort( sAr, new Utils.ShapeSizeComparator() );
+
+        printAllShapes( sAr );
+        Arrays.sort( sAr, new Utils.ShapeColorComparator() );
+        printAllShapes( sAr );
 
     }
 }

@@ -1,13 +1,8 @@
 package lesson_02.utils;
 
 import lesson_02.model.*;
-import lesson_02.view.*;
 
-
-import java.util.Arrays;
 import java.util.Comparator;
-
-import static lesson_02.view.Publisher.printAllShapes;
 
 public class Utils {
 
@@ -22,28 +17,7 @@ public class Utils {
         return s;
     }
 
-    public static void main( String[] args ) {
-
-
-        Rectangle r1 = new Rectangle( 20, 10, "red" );
-        Circle c1 = new Circle( "grey", 5 );
-        Triangle t1 = new Triangle( "blue", 10, 12, 15 );
-
-        Shape[] sAr = new Shape[10];
-        sAr[0] = r1;
-        sAr[1] = c1;
-        sAr[2] = t1;
-
-        printAllShapes( sAr );
-        // Arrays.sort( sAr, new ShapeSizeComparator() );
-        // printAllShapes( sAr );
-        Arrays.sort( sAr, new ShapeColorComparator() );
-        printAllShapes( sAr );
-
-
-    }
-
-    static class ShapeSizeComparator implements Comparator<Shape> {
+    public static class ShapeSizeComparator implements Comparator<Shape> {
 
         @Override
         public int compare( Shape s1, Shape s2 ) {
@@ -60,7 +34,7 @@ public class Utils {
         }
     }
 
-    static class ShapeColorComparator implements Comparator<Shape> {
+    public static class ShapeColorComparator implements Comparator<Shape> {
 
         @Override
         public int compare( Shape s1, Shape s2 ) {
