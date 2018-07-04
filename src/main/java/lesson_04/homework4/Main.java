@@ -1,18 +1,56 @@
 package lesson_04.homework4;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
 /**
  * Created by kaim on 6/25/18.
  */
 public class Main {
 
-    public static void main(String[] args) {
+    private static String rawText;
+    private static String linkToBook = "/home/kaim/prog/text.txt";
 
-        String s = "abc d";
-
-        System.out.println(s.length());
-        System.out.println(s.trim().length());
+    private void setBookText() {
+        try {
+            rawText = readFile(linkToBook);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
+    private String readFile(String fileName) throws IOException {
 
+        try ( BufferedReader bufferedReader = new BufferedReader( new FileReader( fileName ) ) ) {
+            StringBuilder stringBuilder = new StringBuilder();
+            String line;
+
+            while ( ( line = bufferedReader.readLine() ) != null ) {
+                stringBuilder.append( line );
+                stringBuilder.append( "\n" );
+            }
+
+            return stringBuilder.toString();
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Main program = new Main();
+        program.setBookText();
+
+        System.out.println(rawText);
+        System.out.println("----------------------------------");
+
+        Scanner sc = new Scanner( rawText );
+        sc.useDelimiter( "[!?.]]" );
+        while (sc.hasNext()){
+            System.out.println(sc.next().trim());
+        }
+
+        sc.close();
+    }
 
 }
