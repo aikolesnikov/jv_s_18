@@ -3,6 +3,7 @@ package lesson_04.homework4;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -41,16 +42,22 @@ public class Main {
         Main program = new Main();
         program.setBookText();
 
+        System.out.println("-- raw -----------------------------");
         System.out.println(rawText);
-        System.out.println("----------------------------------");
 
+        System.out.println("-- scanner -----------------------------");
         Scanner sc = new Scanner( rawText );
-        sc.useDelimiter( "[!?.]]" );
+        sc.useDelimiter( "[!?.]" );
         while (sc.hasNext()){
             System.out.println(sc.next().trim());
         }
-
         sc.close();
+
+        System.out.println("-- split -----------------------------");
+        for ( String s : rawText.split( "[!?.]" )) {
+            System.out.println(s.trim());
+        }
+
     }
 
 }
