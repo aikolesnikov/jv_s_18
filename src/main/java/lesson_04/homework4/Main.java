@@ -3,6 +3,7 @@ package lesson_04.homework4;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.BreakIterator;
 import java.util.*;
 
 /**
@@ -13,29 +14,58 @@ public class Main {
     private static String bookText;
     private static String bookFile = "/home/kaim/prog/text.txt";
 
+
+    private static String[] splitTextIntoSentences (String text){
+
+        ArrayList<String> sentences = new ArrayList<>( 10 );
+
+        BreakIterator boundary = BreakIterator.getSentenceInstance();
+        boundary.setText( text );
+
+        int start = boundary.first();
+        for ( int end = boundary.next();
+              end != BreakIterator.DONE;
+              start = end, end = boundary.next() ) {
+            sentences.add( text.substring( start, end ).trim() );
+        }
+        sentences.trimToSize();
+
+        return sentences.toArray(new String[sentences.size()]);
+    }
+
+    private static String[] splitTextIntoWords (String text){
+
+        ArrayList<String> words = new ArrayList<>( 10 );
+
+        BreakIterator boundary = BreakIterator.getWordInstance();
+        boundary.setText( text );
+
+        int start = boundary.first();
+        for ( int end = boundary.next();
+              end != BreakIterator.DONE;
+              start = end, end = boundary.next() ) {
+            words.add( text.substring( start, end ).trim() );
+        }
+        words.trimToSize();
+
+        return words.toArray(new String[words.size()]);
+    }
+
     public static void main( String[] args ) {
         Main program = new Main();
         program.setBookText();
 
-        ArrayList<String> sentences = new ArrayList<>( 10 );
-
-        Scanner sc = new Scanner( bookText );
-        sc.useDelimiter( "[!?.]" );
-        String temp_sentence;
-        while ( sc.hasNext() ) {
-            temp_sentence = sc.next();
-            if ( !(temp_sentence.isEmpty()) ) {
-                sentences.add( temp_sentence.trim() );
-            }
-        }
-        sc.close();
-
-        sentences.trimToSize();
-        System.out.println( sentences.size() );
-
-        for ( String s : sentences ) {
+        for ( String s : splitTextIntoSentences(bookText) ) {
             System.out.println( s );
         }
+
+        System.out.println("-----------------------");
+
+        for ( String s : splitTextIntoWords("Word1, word2.") ) {
+            System.out.println( s );
+        }
+
+
     }
 
     private void setBookText() {
@@ -59,6 +89,5 @@ public class Main {
 
             return stringBuilder.toString();
         }
-
     }
 }
