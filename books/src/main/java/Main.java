@@ -6,7 +6,7 @@ import model.Book;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("test");
+        System.out.println("Book creating");
 
         Book b1 = new Book("Name1","Author1", "Publisher1", 1970,
                 20, 300);

@@ -12,4 +12,4 @@ public class TestMain {
         assertEquals(0, 0);
     }
 
-    }
+}

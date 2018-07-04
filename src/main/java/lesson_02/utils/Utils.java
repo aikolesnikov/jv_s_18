@@ -1,6 +1,6 @@
 package lesson_02.utils;
 
-import lesson_02.model.*;
+import lesson_02.model.Shape;
 
 import java.util.Comparator;
 
