@@ -17,7 +17,7 @@ public class BreakIterTest {
     public static void main( String[] args ) {
         String stringToExamine = "Uhu. Lalal? Ogo, ogoo!! Yes... No no no.";
 
-        BreakIterator boundary = BreakIterator.getSentenceInstance();
+        BreakIterator boundary = BreakIterator.getWordInstance();
         boundary.setText(stringToExamine);
         printEachForward(boundary, stringToExamine);
     }
