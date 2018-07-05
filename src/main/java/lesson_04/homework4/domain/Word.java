@@ -1,4 +1,6 @@
 package lesson_04.homework4.domain;
 
-class Word {
+class Word extends SentenceParts{
+    private MyCharacter[] myCharacters;
+
 }

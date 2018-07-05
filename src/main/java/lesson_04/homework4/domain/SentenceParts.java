@@ -1,4 +1,4 @@
 package lesson_04.homework4.domain;
 
-class Character {
+public abstract class SentenceParts {
 }

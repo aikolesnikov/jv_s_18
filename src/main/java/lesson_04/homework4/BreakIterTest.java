@@ -1,23 +1,22 @@
 package lesson_04.homework4;
 
+import lesson_04.homework4.utils.SystemUtils;
+
 import java.text.BreakIterator;
 import java.util.Locale;
 
+import static lesson_04.homework4.view.TextPrinter.printEachForward;
+
 public class BreakIterTest {
 
-    private static void printEachForward(BreakIterator boundary, String source) {
-        int start = boundary.first();
-        for (int end = boundary.next();
-             end != BreakIterator.DONE;
-             start = end, end = boundary.next()) {
-            System.out.println(source.substring(start,end));
-        }
-    }
 
-    public static void main( String[] args ) {
-        String stringToExamine = "Uhu. Lalal? Ogo, ogoo!! Yes... No no no.";
 
-        BreakIterator boundary = BreakIterator.getWordInstance();
+    public static void main( String[] args ) throws Exception{
+        // String stringToExamine = "Uhu. Lalal? Ogo, ogoo!! Yes... No no no.";
+
+        String stringToExamine = SystemUtils.readFile( "/home/kaim/prog/text.txt" );
+
+        BreakIterator boundary = BreakIterator.getLineInstance();
         boundary.setText(stringToExamine);
         printEachForward(boundary, stringToExamine);
     }

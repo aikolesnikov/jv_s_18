@@ -321,7 +321,7 @@ public class ArraysTask {
         System.out.println();
 
         // task_08(ar);
-        // System.out.println();
+        // SystemUtils.out.println();
 
         task_09(ar);
         System.out.println();
@@ -329,10 +329,10 @@ public class ArraysTask {
         task_10(ar);
 
 
-        // System.out.println(Arrays.toString(task14(new int[]{1, 2, 3, 4, 5, 6})));
+        // SystemUtils.out.println(Arrays.toString(task14(new int[]{1, 2, 3, 4, 5, 6})));
         // task15(new int[]{1, 2, 3, 4, -5, 6});
-        // System.out.println(Arrays.toString(task16(new int[]{1, 2, 3, 4, 5, 6}, new int[]{3, 4, 5, 6, 7, 8})));
-        // System.out.println(Arrays.toString(task17(new int[]{8, 2, 3, 7, 8})));
+        // SystemUtils.out.println(Arrays.toString(task16(new int[]{1, 2, 3, 4, 5, 6}, new int[]{3, 4, 5, 6, 7, 8})));
+        // SystemUtils.out.println(Arrays.toString(task17(new int[]{8, 2, 3, 7, 8})));
         System.out.println(Arrays.toString(task18(new int[]{1, 2, 3, 4, 5, 6}, new int[]{3, 4, 5, 6, 7, 8})));
 
     }

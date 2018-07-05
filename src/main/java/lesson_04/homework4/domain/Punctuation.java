@@ -1,4 +1,4 @@
 package lesson_04.homework4.domain;
 
-class Punctuation {
+class Punctuation extends SentenceParts{
 }
