@@ -46,7 +46,7 @@ public class Main {
               end != BreakIterator.DONE;
               start = end, end = boundary.next() ) {
             s = text.substring(start, end);
-            if ((s.length() > 1) || (Character.isLetterOrDigit(s.charAt(0)))){
+            if ((s.length() >= 1) && (Character.isLetterOrDigit(s.charAt(0)))){
                 words.add(s);
             }
         }
