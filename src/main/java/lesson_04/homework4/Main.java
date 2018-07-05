@@ -11,11 +11,11 @@ import java.util.*;
  */
 public class Main {
 
-    private static String bookText;
+    private String bookText;
     private static String bookFile = "/home/kaim/prog/text.txt";
 
 
-    private static String[] splitTextIntoSentences (String text){
+    private static String[] splitTextIntoSentences( String text ) {
 
         ArrayList<String> sentences = new ArrayList<>( 10 );
 
@@ -30,10 +30,10 @@ public class Main {
         }
         sentences.trimToSize();
 
-        return sentences.toArray(new String[sentences.size()]);
+        return sentences.toArray( new String[sentences.size()] );
     }
 
-    private static String[] splitTextIntoWords (String text){
+    private static String[] splitTextIntoWords( String text ) {
 
         ArrayList<String> words = new ArrayList<>( 10 );
 
@@ -45,53 +45,57 @@ public class Main {
         for ( int end = boundary.next();
               end != BreakIterator.DONE;
               start = end, end = boundary.next() ) {
-            s = text.substring(start, end);
-            if ((s.length() >= 1) && (Character.isLetterOrDigit(s.charAt(0)))){
-                words.add(s);
+            s = text.substring( start, end );
+            if ( ( s.length() >= 1 ) && ( Character.isLetterOrDigit( s.charAt( 0 ) ) ) ) {
+                words.add( s );
             }
         }
         words.trimToSize();
 
-        return words.toArray(new String[words.size()]);
+        return words.toArray( new String[words.size()] );
     }
 
-    public static void main( String[] args ) {
+    public static void main( String[] args ) throws Exception{
         Main program = new Main();
-        program.setBookText();
 
-        for ( String s : splitTextIntoSentences(bookText) ) {
+        program.bookText = program.readFile( bookFile );
+
+        for ( String s : splitTextIntoSentences( program.bookText) ) {
             System.out.println( s );
         }
 
-        System.out.println("-----------------------");
+        System.out.println( "-----------------------" );
 
-        for ( String s : splitTextIntoWords(bookText) ) {
+        for ( String s : splitTextIntoWords( program.bookText ) ) {
             System.out.println( s );
         }
 
 
     }
 
-    private void setBookText() {
+/*
+    private void readTextFromFile() {
         try {
             bookText = readFile( bookFile );
         } catch ( IOException e ) {
             e.printStackTrace();
         }
     }
+*/
 
     private String readFile( String fileName ) throws IOException {
 
+        StringBuilder stringBuilder = new StringBuilder();
         try ( BufferedReader bufferedReader = new BufferedReader( new FileReader( fileName ) ) ) {
-            StringBuilder stringBuilder = new StringBuilder();
             String line;
-
             while ( ( line = bufferedReader.readLine() ) != null ) {
                 stringBuilder.append( line );
                 stringBuilder.append( "\n" );
             }
-
-            return stringBuilder.toString();
+        } catch ( IOException e ) {
+            e.printStackTrace();
         }
+
+        return stringBuilder.toString();
     }
 }
