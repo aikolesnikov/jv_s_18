@@ -40,11 +40,15 @@ public class Main {
         BreakIterator boundary = BreakIterator.getWordInstance();
         boundary.setText( text );
 
+        String s;
         int start = boundary.first();
         for ( int end = boundary.next();
               end != BreakIterator.DONE;
               start = end, end = boundary.next() ) {
-            words.add( text.substring( start, end ).trim() );
+            s = text.substring(start, end);
+            if ((s.length() > 1) || (Character.isLetterOrDigit(s.charAt(0)))){
+                words.add(s);
+            }
         }
         words.trimToSize();
 
@@ -61,7 +65,7 @@ public class Main {
 
         System.out.println("-----------------------");
 
-        for ( String s : splitTextIntoWords("Word1, word2.") ) {
+        for ( String s : splitTextIntoWords(bookText) ) {
             System.out.println( s );
         }
 
