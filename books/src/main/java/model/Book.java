@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Comparator;
+
 /**
  * Created by kaim on 6/30/18.
  */

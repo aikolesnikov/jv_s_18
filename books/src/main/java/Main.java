@@ -12,7 +12,7 @@ import java.util.List;
 public class Main {
 
     public static void main( String[] args ) {
-        Book b1 = new Book( "BookName1", "Author1", "Publisher1", 1970, 20, 300 );
+        Book b1 = new Book( "BookName1", "Author1", "Publisher2", 1970, 20, 300 );
         Book b2 = new Book( "BookName2", "Author1", "Publisher1", 1975, 100, 560 );
 
         List<Book> bookList1 = new ArrayList<>();
@@ -24,5 +24,7 @@ public class Main {
         LibraryController libraryController = new LibraryController( library, libraryView );
 
         libraryController.getLibraryInfo();
+        System.out.println("-----------------------------------");
+        libraryController.getBooksSortedByPublisher();
     }
 }

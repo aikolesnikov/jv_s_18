@@ -17,6 +17,10 @@ public class LibraryController {
         libraryView.printLibraryItems( library );
     }
 
+    public void getBooksSortedByPublisher(){
+        libraryView.printBooksSortedByPublisher( library );
+    }
+
     public void getBookInfo( Book book) {
         libraryView.printBook( book );
     }
