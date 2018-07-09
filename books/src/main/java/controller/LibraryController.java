@@ -1,5 +1,6 @@
 package controller;
 
+import model.Book;
 import model.Library;
 import view.LibraryView;
 
@@ -14,5 +15,9 @@ public class LibraryController {
 
     public void getLibraryInfo() {
         libraryView.printLibraryItems( library );
+    }
+
+    public void getBookInfo( Book book) {
+        libraryView.printBook( book );
     }
 }
