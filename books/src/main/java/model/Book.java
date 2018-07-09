@@ -11,8 +11,7 @@ public class Book {
     private int pages;
     private int price;
 
-
-    public Book(String name, String author, String publisher, int year, int pages, int price) {
+    public Book( String name, String author, String publisher, int year, int pages, int price) {
         this.name = name;
         this.author = author;
         this.publisher = publisher;
@@ -67,5 +66,17 @@ public class Book {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", year=" + year +
+                ", pages=" + pages +
+                ", price=" + price +
+                '}';
     }
 }
