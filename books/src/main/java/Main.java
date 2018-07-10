@@ -27,14 +27,15 @@ public class Main {
         LibraryView libraryView = new LibraryView();
         LibraryController libraryController = new LibraryController( library, libraryView );
 
+        // libraryController.getLibraryInfo();
 
         // 1. Получить список книг указанного автора;
         System.out.println("Books by author:");
-        libraryController.getBooksByAuthor ("Author1", library);
+        libraryController.printBooksByAuthor( "Author1", library);
 
         // 2. Получить список книг, которые изданы указанным издательством;
         System.out.println("Books by Publisher:");
-        libraryController.getBooksByPublisher ("Publisher2", library);
+        libraryController.printBooksByPublisher( "Publisher2", library);
 
         // 3. Получить список книг, изданных позже указанного года.
         System.out.println("Books published earlier than:");

@@ -7,57 +7,68 @@ import utils.LibraryUtils;
 import java.util.Comparator;
 
 public class LibraryView {
-    public void printLibraryItems( Library library ) {
-        if ( library != null ) {
-            System.out.println( library.toString() );
+    public String getLibraryView( Library library ) {
+        if ( library == null ) {
+            return null;
         }
+
+        return library.toString();
     }
 
-    public void printBook( Book book ) {
+    public String getBookView( Book book ) {
         if ( book != null ) {
-            System.out.println( book.toString() );
+            book.toString();
         }
+        return "";
     }
 
-    public void printBooksSortedByPublisher( Library library ) {
+    public String getBooksSortedByPublisherView( Library library ) {
         if ( library != null ) {
             Comparator<Book> bookComparator = Comparator.comparing( Book::getPublisher );
-            System.out.println( LibraryUtils.sortBookList(
+            return  LibraryUtils.sortBookList(
                     library.getBookList(),
                     bookComparator
-            ) );
+            ).toString();
         }
+        return "";
     }
 
-    public void printBooksOfAuthor( String author, Library library ) {
+    public String getBooksOfAuthorView( String author, Library library ) {
+        StringBuilder sb = new StringBuilder( "" );
         if ( ( library != null ) && ( author != null ) && !( author.isEmpty() ) ) {
             for ( Book b :
                     library.getBookList() ) {
                 if ( ( b.getAuthor() != null ) && ( author.equals( b.getAuthor() ) ) ) {
-                    System.out.println( b );
+                    sb.append( b.toString() );
                 }
             }
         }
+        return sb.toString();
     }
 
-    public void printBooksOfPublisher( String publisher, Library library ) {
+    public String getBooksOfPublisherView( String publisher, Library library ) {
+        StringBuilder sb = new StringBuilder( "" );
+
         if ( ( library != null ) && ( publisher != null ) && !( publisher.isEmpty() ) ) {
             for ( Book b :
                     library.getBookList() ) {
                 if ( ( b.getPublisher() != null ) && ( publisher.equals( b.getPublisher() ) ) ) {
-                    System.out.println( b );
+                    sb.append( b.toString() );
                 }
             }
         }
+        return sb.toString();
     }
 
-    public void printBooksPublishedYearlierThan( int Year, Library library ) {
+    public String getBooksPublishedearlierThanYearView( int Year, Library library ) {
+        StringBuilder sb = new StringBuilder( "" );
         if ( library != null ) {
             for ( Book b : library.getBookList() ) {
                 if ( b.getYear() > Year ) {
-                    System.out.println( b );
+                    sb.append( b.toString() );
                 }
             }
         }
+        return sb.toString();
     }
 }

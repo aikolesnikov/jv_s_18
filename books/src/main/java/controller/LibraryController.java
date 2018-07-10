@@ -14,21 +14,21 @@ public class LibraryController {
     }
 
     public void getLibraryInfo() {
-        libraryView.printLibraryItems( library );
+        System.out.println(libraryView.getLibraryView( library ));
     }
-    public void getBookInfo( Book book) {
-        libraryView.printBook( book );
+    public void printBookInfo( Book book) {
+        System.out.println(libraryView.getBookView( book ));
     }
-    public void getBooksByAuthor (String author, Library library){
-        libraryView.printBooksOfAuthor( author, library);
+    public void printBooksByAuthor( String author, Library library){
+        System.out.println(libraryView.getBooksOfAuthorView( author, library));
     }
-    public void getBooksByPublisher (String publisher, Library library){
-        libraryView.printBooksOfPublisher ( publisher, library);
+    public void printBooksByPublisher( String publisher, Library library){
+        System.out.println(libraryView.getBooksOfPublisherView( publisher, library));
     }
     public void getBooksPublishedYearlierThan (int Year, Library library){
-        libraryView.printBooksPublishedYearlierThan ( Year, library);
+        System.out.println(libraryView.getBooksPublishedearlierThanYearView( Year, library));
     }
     public void getBooksSortedByPublisher(){
-        libraryView.printBooksSortedByPublisher( library );
+        System.out.println(libraryView.getBooksSortedByPublisherView( library ));
     }
 }
