@@ -25,11 +25,9 @@ public class LibraryController {
     public void getBooksByPublisher (String publisher, Library library){
         libraryView.printBooksOfPublisher ( publisher, library);
     }
-
     public void getBooksPublishedYearlierThan (int Year, Library library){
         libraryView.printBooksPublishedYearlierThan ( Year, library);
     }
-
     public void getBooksSortedByPublisher(){
         libraryView.printBooksSortedByPublisher( library );
     }
