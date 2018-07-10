@@ -1,6 +1,7 @@
 import controller.LibraryController;
 import model.Book;
 import model.Library;
+import utils.SystemUtils;
 import view.LibraryView;
 
 import java.util.ArrayList;
@@ -27,8 +28,6 @@ public class Main {
         LibraryView libraryView = new LibraryView();
         LibraryController libraryController = new LibraryController( library, libraryView );
 
-        // libraryController.getLibraryInfo();
-
         // 1. Получить список книг указанного автора;
         System.out.println("Books by author:");
         libraryController.printBooksByAuthor( "Author1", library);
@@ -44,5 +43,16 @@ public class Main {
         // 4. Упорядочить книги по издательствам
         System.out.println("Books sorted by Publisher:");
         libraryController.getBooksSortedByPublisher();
+
+        library.getBookList().get( 0 ).setData( "It should be some text here." );
+        try {
+            library.getBookList().get( 1 ).setData( SystemUtils.readFile(
+                    "/home/kaim/prog/labs/jv/jv_s_18/books/src/main/resources/text.txt" ));
+        } catch ( Exception e ){
+            e.printStackTrace();
+        }
+        System.out.println(b2.getData());
+
+
     }
 }

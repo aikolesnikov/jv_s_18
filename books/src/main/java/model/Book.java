@@ -12,6 +12,15 @@ public class Book {
     private int year;
     private int pages;
     private int price;
+    private String data;
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData( String data ) {
+        this.data = data;
+    }
 
     public Book( String name, String author, String publisher, int year, int pages, int price) {
         this.name = name;
