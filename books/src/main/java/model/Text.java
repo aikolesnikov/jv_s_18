@@ -1,6 +1,6 @@
 package model;
 
 class Text {
-    private String data;
+    private String rawText;
     private Sentence[] sentences;
 }

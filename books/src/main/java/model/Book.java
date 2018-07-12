@@ -10,15 +10,15 @@ public class Book {
     private int year;
     private int pages;
     private int price;
-    private String textData;
+    private String rawText;
     private Text text;
 
-    public String getTextData() {
-        return textData;
+    public String getRawText() {
+        return rawText;
     }
 
-    public void setTextData( String textData ) {
-        this.textData = textData;
+    public void setRawText( String rawText ) {
+        this.rawText = rawText;
     }
 
     public Book( String name, String author, String publisher, int year, int pages, int price) {

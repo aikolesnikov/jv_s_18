@@ -44,16 +44,16 @@ public class Main {
         // System.out.println("Books sorted by Publisher:");
         // libraryController.getBooksSortedByPublisher();
 
-        library.getBookList().get( 0 ).setTextData( "It should be some text here." );
+        library.getBookList().get( 0 ).setRawText( "It should be some text here." );
         try {
-            library.getBookList().get( 1 ).setTextData( SystemUtils.readFile(
+            library.getBookList().get( 1 ).setRawText( SystemUtils.readFile(
                     "/home/kaim/prog/labs/jv/jv_s_18/books/src/main/resources/text.txt" ) );
         } catch ( Exception e ) {
             e.printStackTrace();
         }
-        // System.out.println(b2.getTextData());
-        // System.out.println( Arrays.toString( Splitter.splitTextIntoStringWords( b2.getTextData() ) ));
-        // String[] sAr = Splitter.splitTextIntoStringTokens( b2.getTextData() );
+        // System.out.println(b2.getRawText());
+        // System.out.println( Arrays.toString( Splitter.splitTextIntoStringWords( b2.getRawText() ) ));
+        // String[] sAr = Splitter.splitTextIntoStringTokens( b2.getRawText() );
         // for ( String s: sAr ) {
         // System.out.print(s);
         // }
