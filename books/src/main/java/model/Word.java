@@ -1,5 +1,4 @@
 package model;
 
-class Word extends SentenceParts{
-
+public class Word extends SentenceParts{
 }

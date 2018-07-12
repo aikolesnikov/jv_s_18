@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Comparator;
-
 /**
  * Created by kaim on 6/30/18.
  */
@@ -12,14 +10,15 @@ public class Book {
     private int year;
     private int pages;
     private int price;
-    private String data;
+    private String textData;
+    private Text text;
 
-    public String getData() {
-        return data;
+    public String getTextData() {
+        return textData;
     }
 
-    public void setData( String data ) {
-        this.data = data;
+    public void setTextData( String textData ) {
+        this.textData = textData;
     }
 
     public Book( String name, String author, String publisher, int year, int pages, int price) {

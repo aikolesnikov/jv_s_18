@@ -80,5 +80,4 @@ public class Splitter {
 
         return words.toArray( new String[words.size()] );
     }
-
 }

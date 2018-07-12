@@ -1,4 +1,4 @@
 package model;
 
-class Punctuation extends SentenceParts{
+public class Punctuation extends SentenceParts{
 }
