@@ -24,7 +24,7 @@ public class Splitter {
         ArrayList<String> sentences = new ArrayList<>( 10 );
 
         BreakIterator boundary = BreakIterator.getSentenceInstance();
-        boundary.setText( text );
+        boundary.setText( text  );
 
         int start = boundary.first();
         for ( int end = boundary.next();

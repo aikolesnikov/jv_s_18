@@ -1,5 +1,5 @@
 package model;
 
-public class Word extends SentenceParts{
+public class Word extends SentencePart{
     String rawText;
 }
