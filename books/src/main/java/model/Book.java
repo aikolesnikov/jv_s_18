@@ -10,9 +10,18 @@ public class Book {
     private int year;
     private int pages;
     private int price;
+    private String rawText;
+    private Text text;
 
+    public String getRawText() {
+        return rawText;
+    }
 
-    public Book(String name, String author, String publisher, int year, int pages, int price) {
+    public void setRawText( String rawText ) {
+        this.rawText = rawText;
+    }
+
+    public Book( String name, String author, String publisher, int year, int pages, int price) {
         this.name = name;
         this.author = author;
         this.publisher = publisher;
@@ -67,5 +76,17 @@ public class Book {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", year=" + year +
+                ", pages=" + pages +
+                ", price=" + price +
+                '}';
     }
 }

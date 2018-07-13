@@ -35,6 +35,5 @@ public class Main {
         printAllShapes( sAr );
         Arrays.sort( sAr, new Utils.ShapeColorComparator() );
         printAllShapes( sAr );
-
     }
 }
