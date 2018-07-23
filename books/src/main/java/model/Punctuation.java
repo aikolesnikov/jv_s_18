@@ -1,5 +1,5 @@
 package model;
 
-public class Punctuation extends SentencePart{
+public class Punctuation extends TextToken {
     private char data;
 }
